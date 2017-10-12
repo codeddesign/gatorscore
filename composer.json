@@ -1,0 +1,21 @@
+{
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/http-foundation": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gator\\": "src/"
+        },
+        "files": [
+            "gator_settings.php"
+        ]
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "cp -n .example.gator_settings.php gator_settings.php || true",
+            "cp -n .example.gator_nginx.conf gator_nginx.conf || true",
+            "composer dump-autoload --optimize"
+        ]
+    }
+}
